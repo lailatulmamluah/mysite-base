@@ -21,5 +21,12 @@
     <p>harganya juga terjangkau sesuai menu yang di pilih. bukan hanya makanan yang ada di sana tapi juga ada berbagai minuman</p>
     <a href="/produk">MAKANAN</a>
     <a href="/aku">MINUMAN</a>
+    <h1>{{ judul }}</h1>
+    <h1>{{ subjudul }}</h1>
+    <ol>
+        {% for data in kategori %}
+        <li>{{data.nama}}</li>
+        {% endfor %}
+    </ol>
 </body>
 </html>

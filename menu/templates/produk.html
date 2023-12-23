@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/members">HOME</a>
+
     <h1>MAKANAN</h1>
     <p>MENU:</p>
 <ul>
@@ -15,5 +15,19 @@
     <li>bakso mantap 20k</li>
     <li>bakso lava 30k</li>
   </ul>
+  <a href="/members">HOME</a>
+  <table class="table berdered">
+    <tr>
+        <th>ID</th>
+        <th>Nama Produk</th>
+    </tr>
+    
+    {% for dl in data %}
+    <tr>
+        <td>{{dl.id}}</td>
+        <td><a href="details/{{dl.id}}">{{dl.namaproduk}}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
 </body>
 </html>
