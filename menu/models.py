@@ -11,7 +11,7 @@ class kategori(models.Model):
     
 # admin.site.register(kategori)
 
-class produk(models.Model):
+class Produk(models.Model):
     kategori = models.ForeignKey(kategori, on_delete=models.CASCADE)
     namaproduk = models.CharField(max_length=100)
     harga = models.CharField(max_length=20)

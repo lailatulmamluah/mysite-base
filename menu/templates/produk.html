@@ -6,21 +6,39 @@
     <title>Document</title>
 </head>
 <body>
+<style>
+    body {
+  background-color: rgb(212, 167, 17);
+}
+h1 {
+    color: rgb(235, 179, 26);
+  background-color: rgb(244, 248, 244);
+}
+a {
+      background-color: #f3faf7;
+      border: none;
+      color: rgb(235, 143, 23);
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+</style>
 
     <h1>MAKANAN</h1>
     <p>MENU:</p>
 <ul>
-    <li>bakso 15k</li>
+    <li>bakso biasa 15k</li>
     <li>mie bakso 25k</li>
     <li>bakso mantap 20k</li>
     <li>bakso lava 30k</li>
   </ul>
-  <a href="/members">HOME</a>
+
+  <a href="/index">HOME</a>
   <table class="table berdered">
-    <tr>
-        <th>ID</th>
-        <th>Nama Produk</th>
-    </tr>
     
     {% for dl in data %}
     <tr>

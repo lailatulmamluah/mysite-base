@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import produk, kategori
+from .models import Produk, kategori
 
 # Register your models here.
 
@@ -9,4 +9,4 @@ class produkAdmin(admin.ModelAdmin):
 
     
 admin.site.register(kategori)
-admin.site.register(produk , produkAdmin)
+admin.site.register(Produk , produkAdmin)
