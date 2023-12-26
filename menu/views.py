@@ -1,12 +1,12 @@
 from django.http import HttpResponse
 from django.template import loader
-from .models import kategori, Produk
+from .models import kategori, Pondok
 
 def members(request):
   data = kategori.objects.all()
   context = {
-    "judul": "Selamat datang di tempat makan",
-    "sub judul": "Bakso bejo",
+    "judul": "Selamat datang di pondok pesantren",
+    "sub judul": "Bustanul ulum sumber anom",
     "kategori": data,
   }
   template = loader.get_template('myfirst.html')
@@ -16,8 +16,8 @@ def members(request):
 def produk(request):
   data_produk = Produk.objects.all().values()
   context = {
-    "judul": "Selamat datang di tempat makan",
-    "sub judul": "Bakso bejo",
+    "judul": "Selamat datang di pondok pesantren",
+    "sub judul": "Bustanul ulum sumber anom",
     "data": data_produk,
   }
   template = loader.get_template('produk.html')
@@ -41,6 +41,10 @@ def index(request) :
 
 def contact(request) :
     template = loader.get_template('contact.html') 
+    return HttpResponse(template.render())
+
+def formulir(request) :
+    template = loader.get_template('formulir.html') 
     return HttpResponse(template.render())
 
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Siswa Baru</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 100px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 800px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registrationForm" onsubmit="submitForm(event)">
+        <label for="biodata siswa/SISWI">BIODATA SISWA/SISWI</label>
+
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" required>
+
+        <label for="dob">Tanggal Lahir:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="jenis kelamin">Jenis Kelamin:</label>
+        <input type="text" id="jenis kelamin" name="jenis kelamin" required>
+
+        <label for="anak ke">Anak Ke:</label>
+        <input type="text" id="anak ke" name="anak ke" required>
+        
+        <label for="jumlah saudara">Jumlah Saudara:</label>
+        <input type="text" id="jumlah saudara" name="jumlah saudara" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="orang tua/wali">ORANG TUA/WALI</label>
+
+        <button type="submit">Daftar</button>
+        <button type="submit">Kembali</button>
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Handle form submission logic here
+            // Misalnya, dapat Anda kirimkan data ke server atau lakukan validasi tambahan.
+        }
+    </script>
+
+</body>
+</html>
+
+

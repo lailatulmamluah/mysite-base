@@ -11,12 +11,12 @@ class kategori(models.Model):
     
 # admin.site.register(kategori)
 
-class Produk(models.Model):
+class Pondok(models.Model):
     kategori = models.ForeignKey(kategori, on_delete=models.CASCADE)
-    namaproduk = models.CharField(max_length=100)
+    namapondok = models.CharField(max_length=100)
     harga = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"{self.namaproduk} {self.harga}"
+        return f"{self.namapondok} {self.harga}"
     
-# admin.site.register(produk)
+# admin.site.register(pondok)
