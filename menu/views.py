@@ -13,21 +13,21 @@ def members(request):
   return HttpResponse(template.render(context, request))
  
 
-def produk(request):
-  data_produk = Produk.objects.all().values()
+def pondok(request):
+  data_pondok = Pondok.objects.all().values()
   context = {
     "judul": "Selamat datang di pondok pesantren",
     "sub judul": "Bustanul ulum sumber anom",
-    "data": data_produk,
+    "data": data_pondok,
   }
-  template = loader.get_template('produk.html')
+  template = loader.get_template('pondok.html')
   return HttpResponse(template.render())
 
-def detail_produk(request, id):
-   data_produk = Produk.objects.get(id=id)
-   template = loader.get_template('detailproduk.html')
+def detail_pondok(request, id):
+   data_pondok = Pondok.objects.get(id=id)
+   template = loader.get_template('detailpondok.html')
    context = {
-      "produk": data_produk,
+      "pondok": data_pondok,
    }
    return HttpResponse(template.render(context, request))
 
