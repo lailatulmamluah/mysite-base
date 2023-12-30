@@ -39,14 +39,25 @@
              margin-top: 50px; /* Adjust as needed */
           }
     </style>
-    <h1>PENDIDIKAN DINIYAH</h1>
+    
+        <h1>PROGRAM</h1>
     <ul>
-        <li>Madrasah Ula</li>
-        <li>Madrasah Wustho</li>
-        <li>Madrasah Ulya</li>
+        <li>Akselerasi Baca Kitab Kuning Program Al Miftah Lil Ulum</li>
+        <li>Tahfidzul Qur'an Ar Rofi'i</li>
+        <li>Fikih Wanita (Tarjuman Haid)</li>
+        <li>Qiro'ah & Sholawat</li>
       </ul>
 
-      <a href="/index"><button type="submit">Kembali</button></a>
-
+  <a href="/index"><button type="submit">Kembali</button></a></a>
+  <table class="table berdered">
+    
+    
+    {% for dl in data %}
+    <tr>
+        <td>{{dl.id}}</td>
+        <td><a href="details/{{dl.id}}">{{dl.namaproduk}}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
 </body>
 </html>

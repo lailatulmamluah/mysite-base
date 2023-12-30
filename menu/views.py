@@ -1,6 +1,8 @@
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.template import loader
 from .models import kategori, Pondok
+from django.views.decorators.csrf import csrf_exempt
 
 def members(request):
   data = kategori.objects.all()
@@ -39,12 +41,14 @@ def index(request) :
     template = loader.get_template('index.html') 
     return HttpResponse(template.render())
 
-def contact(request) :
-    template = loader.get_template('contact.html') 
+def program(request) :
+    template = loader.get_template('program.html') 
     return HttpResponse(template.render())
 
-def formulir(request) :
-    template = loader.get_template('formulir.html') 
+def form(request) :
+    template = loader.get_template('form.html') 
     return HttpResponse(template.render())
+
+
 
 
