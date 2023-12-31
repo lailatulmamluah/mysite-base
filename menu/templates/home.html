@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    body {
+  background-color: rgb(247, 245, 238);
+}
+h1 {
+    color: rgb(235, 179, 26);
+    
+}
+h2 {
+    color: rgb(235, 179, 26);
+    
+}
+a {
+      background-color: #f3faf7;
+      border: none;
+      color: rgb(235, 143, 23);
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+   }
+   button {
+            background-color: #da9d1b;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    h1 {
+         text-align: center;
+         margin-top: 50px; /* Adjust as needed */
+      }
+      h2 {
+         text-align: center;
+         margin-top: 10px; /* Adjust as needed */
+      }
+      p {
+         text-align: center;
+         margin-top: 20px; /* Adjust as needed */
+      }
+</style>
+
+    <h1>PP.Bustanul Ulum Sumber Anom</h1>
+    <h2>Angsanah Palengaan Pamekasan</h2>
+    <p>Pondok pesantren bustanul ulum sumber anom angsanah adalah pondok pesantren yg didirikan oleh KH ROFII pada tahun 1920M.tepatnya ada di dusun sumber anom desa angsanah kecamatan palengaan kota pamekasan madura.usia pesantren ini sangatlah tua, karna ditahun 2019 ini, pp sumber anom ini sudah mencapai usia 99 tahun.dalam kurun waktu 99 tahun ini, pp sumber anom sudah mengalami pergantian pengasuh sebanyak empat kali.pengasuh pertama atau pendiri pondok ini adalah KH ROFII, yang kemudian digantikan oleh KH TOYYIB ROFII, Kemudian digantikan oleh adik beliau KH HASYIM ROFII sebagai pengasuh ke 3.dan pengasuh sekarang yaitu KH TAUFIQ HASYIM MP.d yang sekaligus menjabat sebagai ketua tanfidziyah PCNU PAMEKASAN.</p>
+    <p>Pondok Pesantren yang memiliki Santri mulai dari PAUD, RA, MI, MTS, MA dan SMK. Pondok ini dipimpin oleh Kyai Haji Raden Taufiq Hasyim, M. Pd. Dan para Ustad dan Ustadzah yang sangat berpengalaman dalam mendidik santri dengan sabar dan kasih sayang, selain itu tempatnya memadai untuk para santri.</p>
+  <a href="/index"><button type="submit">Kembali</button></a>
+  <table class="table berdered">
+    
+    {% for dl in data %}
+    <tr>
+        <td>{{dl.id}}</td>
+        <td><a href="details/{{dl.id}}">{{dl.namapondok}}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
