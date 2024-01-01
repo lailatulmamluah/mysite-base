@@ -1,10 +1,48 @@
-from django import forms
+{% load static %}
 
-from .models import kategori
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'stylee.css' %}">
 
-class FromPondok( forms.Form):
-    kategori = forms.ModelChoiceField(queryset=kategori.objects.all())
-    nama_santri = forms.ChartField(max_lenght=100)
-    alamat = forms.ChartField(max_lenght=100)
-    tgl_lahir = forms.DateField()
+</head>
+<body>
+    <header>
+        <h1>SELAMAT DATANG DI PP.BUSTANUL ULUM</h1>
+      </header>
+      <nav>
+        <ul>
+            <li><a href ="/home">Beranda</a></li>
+            <li><a href ="" class="active">Pendididkan</a></li>
+            <li><a href ="/list">Pendaftaran</a></li>
+            <li><a href ="/program">Program</a></li>
+            <li><a href ="/index"></a><Kembali/li>
+        </ul>
+        </nav>
+        <div class="container">
+            <div class="library">
+                <h2>ISI DATA FORMULIR</h2>
+        </div>
+     {% csrf_token %}
+      <form action="" method="post">
+      {{ from.as_p }}
     
+          <label for="uname">Kategori</label><br>
+          {{form.kategori}}<br><br>
+      
+          <label for="uname">Nama Santri</label><br>
+          {{form.nama_pinjam}}
+          <br><br>
+          <label for="uname">Alamat</label><br>
+          {{form.judul_buku}}<br><br>
+         
+          <label for="uname">Tgl_Lahir</label><br>
+          {{form.tgl_pinjam}}<br><br>
+        
+          <input type="submit" value="kirim">
+        </form>
+    </body>
+    </html>    

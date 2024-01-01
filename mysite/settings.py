@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'webku',
+        'NAME': 'pondokku',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

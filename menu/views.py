@@ -2,13 +2,14 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.template import loader
 from .models import kategori, Pondok
+from .forms import FromPondok
 from django.views.decorators.csrf import csrf_exempt
 
 def members(request):
   data = kategori.objects.all()
   context = {
-    "judul": "Selamat datang di pondok pesantren",
-    "sub judul": "Bustanul ulum sumber anom",
+    "judul": "",
+    "sub judul": "",
     "kategori": data,
   }
   template = loader.get_template('myfirst.html')
@@ -52,6 +53,32 @@ def form(request) :
 def home(request) :
     template = loader.get_template('home.html') 
     return HttpResponse(template.render())
+
+@csrf_exempt
+def list(request):
+   submitted = False
+   if request.method == "POST":
+      form = FromPondok(request.POST)
+      if form.is_Valid():
+         simpanData = Pondok.objects.create(
+            kategori = form.cleaned_data.get("kategori"),
+            nama_santri = form.cleaned_data.get("nama_santri"),
+            alamat = form.cleaned_data.get("alamat"),
+            tgl_lahir = form.cleaned_data.get("tgl_lahir"),
+         )
+         simpanData.save()
+         return HttpResponseRedirect("/list?submitted=True")
+   else:
+     form = FromPondok
+     if "submitted" in request.GET:
+        submitted = True
+context = {
+     "form": FromPondok,
+  }
+template = loader.get_template('list.html')
+'return' HttpResponse(template.render())
+
+
 
 
 
