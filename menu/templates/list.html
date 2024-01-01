@@ -1,48 +1,92 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{% static 'stylee.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf9f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 100px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #c5990a;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>SELAMAT DATANG DI PP.BUSTANUL ULUM</h1>
-      </header>
-      <nav>
-        <ul>
-            <li><a href ="/home">Beranda</a></li>
-            <li><a href ="" class="active">Pendididkan</a></li>
-            <li><a href ="/list">Pendaftaran</a></li>
-            <li><a href ="/program">Program</a></li>
-            <li><a href ="/index"></a><Kembali/li>
-        </ul>
-        </nav>
-        <div class="container">
-            <div class="library">
-                <h2>ISI DATA FORMULIR</h2>
-        </div>
-     {% csrf_token %}
-      <form action="" method="post">
-      {{ from.as_p }}
-    
-          <label for="uname">Kategori</label><br>
-          {{form.kategori}}<br><br>
-      
-          <label for="uname">Nama Santri</label><br>
-          {{form.nama_pinjam}}
-          <br><br>
-          <label for="uname">Alamat</label><br>
-          {{form.judul_buku}}<br><br>
-         
-          <label for="uname">Tgl_Lahir</label><br>
-          {{form.tgl_pinjam}}<br><br>
-        
-          <input type="submit" value="kirim">
-        </form>
-    </body>
-    </html>    
+
+
+    <form id="registrationForm" onsubmit="submitForm(event)">
+        <label for="biodata siswa/SISWI">ISI FORMULIR</label>
+
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" required>
+
+        <label for="dob">Tanggal Lahir:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="pasword">Pasword:</label>
+        <input type="text" id="pasword" name="pasword" required>
+
+        <a href="/"><button type="submit">Daftar</button></a>
+    </form>
+
+    <a href="/index"><button type="submit">Kembali</button></a>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            
+        }
+    </script>
+
+</body>
+</html>
