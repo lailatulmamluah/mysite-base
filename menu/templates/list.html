@@ -36,24 +36,20 @@
             margin-bottom: 16px;
             box-sizing: border-box;
         }
+       
+       
+        button {
+                background-color: #c5990a;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+        }
 
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button {
-            background-color: #c5990a;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    
     </style>
+
 </head>
 <body>
 
@@ -76,16 +72,19 @@
         <label for="pasword">Pasword:</label>
         <input type="text" id="pasword" name="pasword" required>
 
-        <a href="/"><button type="submit">Daftar</button></a>
+        <a href="/index"><button type="submit">Daftar</button></a>
+        <a href="/index"><button type="submit">Kembali</button></a>
+
     </form>
 
-    <a href="/index"><button type="submit">Kembali</button></a>
+
 
     <script>
         function submitForm(event) {
             event.preventDefault();
             
         }
+        
     </script>
 
 </body>
